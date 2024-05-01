@@ -1,9 +1,12 @@
 package br.com.output.entity.converters;
 
+import org.springframework.stereotype.Component;
+
 import br.com.core.domain.PacienteDomain;
 import br.com.input.controller.dtos.PacienteDTO;
 import br.com.output.entity.PacienteEntity;
 
+@Component
 public class PacienteConverter {
 
 	// Converte de Domain para Entity

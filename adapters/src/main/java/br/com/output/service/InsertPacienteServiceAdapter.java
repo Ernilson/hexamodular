@@ -6,10 +6,11 @@ import org.springframework.stereotype.Service;
 import br.com.core.domain.PacienteDomain;
 import br.com.output.entity.converters.PacienteConverter;
 import br.com.output.repository.PacienteRepository;
+import br.com.ports.input.InsertPacienteDomainInputPort;
 import br.com.ports.output.InsertPacienteDomainOutputPort;
 
 @Service
-public class InsertPacienteServiceAdapter implements InsertPacienteDomainOutputPort{
+public class InsertPacienteServiceAdapter implements InsertPacienteDomainInputPort{
 
 	@Autowired
 	private PacienteRepository repository;
@@ -20,6 +21,7 @@ public class InsertPacienteServiceAdapter implements InsertPacienteDomainOutputP
 	@Override
 	public void insert(PacienteDomain paciente) {
 		var pacienteEntity = converter.toEntity(paciente);
-		repository.save(pacienteEntity);
+		repository.save(pacienteEntity);		
 	}
+	
 }
