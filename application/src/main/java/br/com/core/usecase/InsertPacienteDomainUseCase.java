@@ -6,7 +6,7 @@ import br.com.ports.output.InsertPacienteDomainOutputPort;
 
 public class InsertPacienteDomainUseCase implements InsertPacienteDomainInputPort{
 	
-	private InsertPacienteDomainOutputPort insertPacienteDomainOutputPort;
+	private final InsertPacienteDomainOutputPort insertPacienteDomainOutputPort;
 	
 	public InsertPacienteDomainUseCase(InsertPacienteDomainOutputPort insertPacienteDomainOutputPort) {
 		this.insertPacienteDomainOutputPort = insertPacienteDomainOutputPort;

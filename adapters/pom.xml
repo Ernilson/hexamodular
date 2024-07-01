@@ -34,7 +34,12 @@
 			<version>3.2.5</version>
 		</dependency>
     </dependencies>
-
+    <repositories>
+        <repository>
+            <id>central</id>
+            <url>https://repo.maven.apache.org/maven2</url>
+        </repository>
+    </repositories>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>

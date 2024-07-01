@@ -10,7 +10,7 @@ import br.com.ports.input.InsertPacienteDomainInputPort;
 import br.com.ports.output.InsertPacienteDomainOutputPort;
 
 @Service
-public class InsertPacienteServiceAdapter implements InsertPacienteDomainInputPort{
+public class InsertPacienteServiceAdapter implements InsertPacienteDomainOutputPort{
 
 	@Autowired
 	private PacienteRepository repository;
