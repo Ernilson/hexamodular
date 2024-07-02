@@ -6,6 +6,9 @@ import br.com.core.domain.PacienteDomain;
 import br.com.input.controller.dtos.PacienteDTO;
 import br.com.output.entity.PacienteEntity;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Component
 public class PacienteConverter {
 
@@ -42,12 +45,19 @@ public class PacienteConverter {
     }
     
   //Converte de DTO para Entity
-    public PacienteEntity toDT(PacienteDTO dto) {
-    	PacienteEntity entity = new PacienteEntity();    	
-    	entity.setNome(dto.getNome());
-    	entity.setTelefone(dto.getTelefone());
-    	entity.setCpf(dto.getCpf());
-        return entity;
+    public PacienteDTO toDT(PacienteDomain domain) {
+		PacienteDTO dto = new PacienteDTO();
+    	dto.setNome(domain.getNome());
+    	dto.setTelefone(domain.getTelefone());
+    	dto.setCpf(domain.getCpf());
+        return dto;
     }
+
+	// Converte uma lista de Entities para uma lista de DTOs
+	public List<PacienteDTO> toDTOList(List<PacienteDomain> domainList) {
+		return domainList.stream()
+				.map(this::toDT)
+				.collect(Collectors.toList());
+	}
 
 }

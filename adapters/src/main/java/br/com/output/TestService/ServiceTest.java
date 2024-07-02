@@ -2,12 +2,16 @@
 //
 //import br.com.core.domain.PacienteDomain;
 //import br.com.output.service.InsertPacienteServiceAdapter;
-//import org.junit.Test;
+//import org.junit.jupiter.api.Test;
+//
+//import org.junit.jupiter.api.extension.ExtendWith;
 //import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.boot.test.context.SpringBootTest;
+//import org.springframework.test.context.junit.jupiter.SpringExtension;
 //
 //
-//@SpringBootTest
+//@ExtendWith(SpringExtension.class)
+//@SpringBootTest(classes = {InsertPacienteServiceAdapter.class})
 //public class ServiceTest {
 //
 //    @Autowired
@@ -23,6 +27,5 @@
 //        domain.setTelefone("321654987");
 //
 //        service.insert(domain);
-//
 //    }
 //}
